@@ -6,12 +6,16 @@ function Post({posts}){
   return (
     <ul>
     {posts.map((post)=>(
-            <div className="cards">
-                <div className="cards2">
-                    <img src ={post.img} /> 
-                    <ul src ={post.caption} />
+            <div className="container">
+                <div className="header">
+                  <div className ="post_image">
+                    <img src ={post.img} key = {post.id}  /> 
+                    <div className = "captions">
+                    {post.caption} 
                     </div>
-                </div>             
+                </div>
+                </div>    
+                </div>         
     ))}
     </ul>
   );
