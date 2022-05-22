@@ -1,19 +1,22 @@
 import React from 'react';
 import "./Post.css"
 
-function Post(){
+function Post({posts}){
 
   return (
-    <div className="wrapper">
-   
+    <ul>
+    {posts.map((post)=>(
             <div className="cards">
                 <div className="cards2">
-                    
+                    <img src ={post.img} /> 
+                    <ul src ={post.caption} />
                     </div>
                 </div>             
-   
-</div>
-  )
+    ))}
+    </ul>
+  );
 }
 
 export default Post 
+
+

@@ -2,11 +2,11 @@ import React from 'react'
 import Post from './Post'
 import './MainContent.css'
 
-const MainContent = () => {
+const MainContent = ({posts}) => {
   return (
     <div>
         <div className="Nav">
-          <Post />
+          <Post posts={posts}/>
         </div>
     </div>
   )
