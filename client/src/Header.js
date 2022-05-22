@@ -2,6 +2,8 @@ import React from 'react';
 import './Header.css';
 import { Grid } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
+import LogoutIcon from '@mui/icons-material/Logout';
+import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
 
 
@@ -21,11 +23,11 @@ return (
     <Grid item xs={2}></Grid>
 
         <div className ="icons">
-
-
-
-        <div className = "avatar">
+            <LogoutIcon className = "logout"/>
+            <ChatBubbleOutlineIcon className ="messages" />
+        <div className = "avatar">      
     <Avatar/> 
+    
     
 </div>
 
