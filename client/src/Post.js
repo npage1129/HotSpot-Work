@@ -3,6 +3,9 @@ import "./Post.css"
 
 function Post({posts}){
   const [show, setShow]= useState('false')
+  function showButton(){
+    setShow(!show)
+  }
   
   return (
     <div className="middle">
@@ -18,16 +21,16 @@ function Post({posts}){
                     {post.caption} 
                   
                     </div>
+         
+                    {show? (post.comments.map((comment)=>
+                    <div className="comments">
+        
+                 {comment.username}: {comment.comment} 
                 
-                  {post.comments.map((comment)=>
-                     <div className="comments">
-        
-                    {comment.username}: {comment.comment}
-        
                   </div>
-                  
-                  )}
-                
+                 
+                  )) : null}
+                          <button className="comments_section" onClick={showButton}>{show?"Hide Comments":"Show Comments"}</button>
                     </div>
                 </div> 
     ))}

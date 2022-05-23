@@ -6,8 +6,8 @@
     height: 400px;
     width: 450px;
     padding: 6px;
-    background-color: #dededebe;
-    border: 2px solid #b8b3b3db;
+    background-color: #0d01013f;
+    border: 2px solid #6a67671c;
     display: block;
     margin: 0 auto;
 
@@ -25,7 +25,7 @@
     font-size: 15px;
     text-align: center;
     padding: 15px;
-    background-color: #e7e5e542;
+    background-color: #e6dede42;
     border: 2px solid #b8b3b3db;
 }
 .comments{
@@ -34,6 +34,13 @@
 }
 .header{
     padding: 4px;
-    border: 2px solid #c4c3c3db;
-    background-color: #ffffff36;
+    border: 2px solid #8f8d8ddb;
+    background-color: #bdb8b837;
+    font-size: 18px;
+}
+.comments_section{
+    width: 125px;
+    border: 2px solid #000000db;
+    background-color: #c50505;
+
 }

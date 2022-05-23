@@ -8,8 +8,8 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
 
 
-function Header(){
-    
+function Header({posts}){
+
 return (
     <div>
         <div className="navBar">
@@ -21,8 +21,10 @@ return (
     <button>Submit</button>
     </Grid>
     <Grid item xs={2}></Grid>
+    
 
         <div className ="icons">
+            
             <LogoutIcon className = "logout"/>
             <ChatBubbleOutlineIcon className ="messages" />
         <div className = "avatar">      

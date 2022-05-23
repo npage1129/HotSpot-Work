@@ -16,7 +16,7 @@ const Home = () => {
     },[])
 return (
     <div>
-    <Header/>
+    <Header posts={posts}/>
     <MainContent posts={posts} />
     </div>
 )
