@@ -1,25 +1,35 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Post.css"
 
 function Post({posts}){
-
+  const [show, setShow]= useState('false')
+  
   return (
     <div className="middle">
     {posts.map((post)=>(
             <div className="container">
-              <div classNam="header">
-                {post.user.username}
-                </div>
+              <div className="header" >
+              {post.user.username}
+              </div>
+                
                   <div>
-                    <img className = "post_image" src ={post.post.img} key = {post.id}  /> 
+                    <img className = "post_image" src ={post.img} key = {post.id}  /> 
                     <div className = "captions">
-                    {post.post.caption} 
+                    {post.caption} 
+                  
                     </div>
-                    <div className = "username">
-                     {post.user.username}: {post.comment}
-                </div>
-                </div>  
-                </div>  
+                
+                  {post.comments.map((comment)=>
+                     <div className="comments">
+        
+                    {comment.username}: {comment.comment}
+        
+                  </div>
+                  
+                  )}
+                
+                    </div>
+                </div> 
     ))}
     </div>
   );

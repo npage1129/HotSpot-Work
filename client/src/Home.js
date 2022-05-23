@@ -8,7 +8,7 @@ const Home = () => {
     const [posts, setPosts] = useState([])
 
     useEffect(()=> {
-        fetch('/comments', {
+        fetch('/posts', {
         
     })
         .then((resp) => resp.json())

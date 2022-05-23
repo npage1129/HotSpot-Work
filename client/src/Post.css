@@ -5,11 +5,12 @@
 .post_image{
     height: 400px;
     width: 450px;
-    border: 2px solid #dbdbdbdb;
     padding: 6px;
-    background-color: #f5f5f5be;
+    background-color: #dededebe;
+    border: 2px solid #b8b3b3db;
     display: block;
     margin: 0 auto;
+
 
 }
 .middle{
@@ -21,9 +22,18 @@
     margin-right: auto;
 }
 .captions{
-    font-size: 12px;
-    border: 2px solid #dbdbdbdb;
+    font-size: 15px;
     text-align: center;
     padding: 15px;
-    background-color: #f5f5f57d;
+    background-color: #e7e5e542;
+    border: 2px solid #b8b3b3db;
+}
+.comments{
+    padding: 2px;
+    font-size: 12px;
+}
+.header{
+    padding: 4px;
+    border: 2px solid #c4c3c3db;
+    background-color: #ffffff36;
 }
