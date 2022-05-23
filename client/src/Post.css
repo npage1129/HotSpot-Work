@@ -1,17 +1,29 @@
 .container{
-    border-top: 2px solid #dbdbdbdb;
-    width: 615px;
-    background-color: white;
-    margin-top: 25px;
-}
-
-.header{
-    border-bottom: 1px solid #dbdbdbdb;
-    display: flex;
+    margin-top: 30px;
 }
 
 .post_image{
-    min-width: 10px;
-    min-height: 10px;
-    margin: 10px;
+    height: 400px;
+    width: 450px;
+    border: 2px solid #dbdbdbdb;
+    padding: 6px;
+    background-color: #f5f5f5be;
+    display: block;
+    margin: 0 auto;
+
+}
+.middle{
+    width: 465px;
+    background-color: white;
+    margin-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.captions{
+    font-size: 12px;
+    border: 2px solid #dbdbdbdb;
+    text-align: center;
+    padding: 15px;
+    background-color: #f5f5f57d;
 }

@@ -4,20 +4,18 @@ import "./Post.css"
 function Post({posts}){
 
   return (
-    <ul>
+    <div className="middle">
     {posts.map((post)=>(
             <div className="container">
-                <div className="header">
-                  <div className ="post_image">
-                    <img src ={post.img} key = {post.id}  /> 
+                  <div>
+                    <img className = "post_image" src ={post.img} key = {post.id}  /> 
                     <div className = "captions">
                     {post.caption} 
                     </div>
-                </div>
-                </div>    
-                </div>         
+                </div>  
+                </div>  
     ))}
-    </ul>
+    </div>
   );
 }
 
