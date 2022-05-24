@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
+import Avatar from '@mui/material/Avatar';
 import "./Post.css"
 
-function Post({posts}){
+function Post({posts, user}){
   const [show, setShow]= useState('false')
   function showButton(){
     setShow(!show)

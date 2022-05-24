@@ -4,7 +4,7 @@ import MainContent from './MainContent';
 
 
 
-const Home = () => {
+const Home = ({user}) => {
     const [posts, setPosts] = useState([])
 
     useEffect(()=> {
@@ -16,8 +16,8 @@ const Home = () => {
     },[])
 return (
     <div>
-    <Header posts={posts}/>
-    <MainContent posts={posts} />
+    <Header posts={posts} user={user}/>
+    <MainContent posts={posts} user={user} />
     </div>
 )
 }

@@ -8,7 +8,7 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
 
 
-function Header({posts}){
+function Header({posts, user}){
 
 return (
     <div>
@@ -27,8 +27,9 @@ return (
             
             <LogoutIcon className = "logout"/>
             <ChatBubbleOutlineIcon className ="messages" />
-        <div className = "avatar">      
-    <Avatar/> 
+        <div className = "avatar">     
+        <Avatar src={user.image}/> 
+
     
     
 </div>
