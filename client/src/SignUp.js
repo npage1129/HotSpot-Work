@@ -1,24 +1,26 @@
 import React, {useState} from 'react'
 import './SignUp.css';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router'
 
-function SignUp ({setUser, setIsAuthenticated}) {
-    const navigate = useNavigate
+function SignUp ({setUser}) {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [image, setImage] = useState(' ')
    
     const [errors, setErrors] = useState([])
 
     function onSubmit(e){
         e.preventDefault()
         const user = {
-            name: username,
+            username: username,
             email,
-            password
+            password,
+            image
         }
        
-        fetch('http:localhost:3000/users',{
+        fetch('/signup',{
           method:'POST',
           headers:{'Content-Type': 'application/json'},
           body:JSON.stringify(user)
@@ -27,10 +29,10 @@ function SignUp ({setUser, setIsAuthenticated}) {
           if(res.ok){
             res.json()
             .then(user=>{
-              setUser(user)
-              setIsAuthenticated(true)
+                setUser(user)
+              
               console.log("you did it!")
-              navigate("/login")
+            navigate("/")
             })
             
           } else {
@@ -59,7 +61,11 @@ function SignUp ({setUser, setIsAuthenticated}) {
 
     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
     </label>
-   
+    <label>
+     Profile Picture
+
+    <input type="text" value={image} onChange={(e) => setImage(e.target.value)} />
+    </label>
     <input type="submit" value="Sign up!" />
   </form>
   { Object.keys(errors) ? Object.keys(errors).map((key, index) => <div>{key+': ' + Object.values(errors)[index]}</div>) : null }

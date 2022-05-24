@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :authorize_user, except: [:create]
+    # before_action :authorize_user, except: [:new, :create]
 
     
     def index
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.create!(user_params)
+        user = User.create!(user_create)
         render json: user, status: :created
     end 
 
@@ -40,4 +40,7 @@ class UsersController < ApplicationController
         params.require(:user).permit(:username, :password, :password_confirmation, :email, :image)
     end 
 
+    def  user_create
+        params.permit(:username, :password, :image, :email)
+    end
 end

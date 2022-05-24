@@ -1,15 +1,17 @@
 import Box from '@mui/material/Box';
 import { Grid } from '@mui/material';
 import './Login.css';
+import {useNavigate} from 'react-router'
 import React, {useState} from 'react';
-import SignUp from './SignUp';
-import {useNavigate} from 'react-router-dom'
+
+
 
 function Login({setUser})  {
-  const navigate = useNavigate();
+const navigate = useNavigate()
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState([])
+
 
   function onSubmit(e) {
     e.preventDefault();
@@ -28,8 +30,7 @@ function Login({setUser})  {
             res.json()
             .then(user=>{
               setUser(user)
-              console.log("you did it!")
-              navigate("/home")
+          navigate('/home')
             })
           } else {
             res.json()

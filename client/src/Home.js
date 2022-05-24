@@ -4,8 +4,9 @@ import MainContent from './MainContent';
 
 
 
-const Home = ({user}) => {
+const Home = ({user, setUser}) => {
     const [posts, setPosts] = useState([])
+   
 
     useEffect(()=> {
         fetch('/posts', {
@@ -16,7 +17,7 @@ const Home = ({user}) => {
     },[])
 return (
     <div>
-    <Header posts={posts} user={user}/>
+    <Header posts={posts} user={user} setUser={setUser} />
     <MainContent posts={posts} user={user} />
     </div>
 )

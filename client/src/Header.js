@@ -4,12 +4,17 @@ import { Grid } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+import {useNavigate} from 'react-router'
 
 
 
-
-function Header({posts, user}){
-
+function Header({user, setUser}){
+const navigate = useNavigate();
+function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then((user) => setUser(user));
+  }
 return (
     <div>
         <div className="navBar">
@@ -25,11 +30,11 @@ return (
 
         <div className ="icons">
             
-            <LogoutIcon className = "logout"/>
+            <LogoutIcon className = "logout" onClick={handleLogout (navigate('/'))} />
             <ChatBubbleOutlineIcon className ="messages" />
         <div className = "avatar">     
-        <Avatar src={user.image}/> 
-
+    <Avatar /> 
+   
     
     
 </div>
