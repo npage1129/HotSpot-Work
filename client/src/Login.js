@@ -1,45 +1,43 @@
 import Box from '@mui/material/Box';
 import { Grid } from '@mui/material';
 import './Login.css';
-import {useNavigate} from 'react-router'
 import React, {useState} from 'react';
+import {useNavigate} from 'react-router'
 
 
 
 function Login({setUser})  {
-const navigate = useNavigate()
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState([])
+const navigate = useNavigate();
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
+const [error, setError] = useState([])
 
-
-  function onSubmit(e) {
-    e.preventDefault();
-    const user  = {
-      username: username,
-      password
-    }
-    console.log(user)
-    fetch('/login', {
-          method:'POST',
-          headers:{'Content-Type': 'application/json'},
-          body:JSON.stringify(user)
-        })
-        .then(res => {
-          if(res.ok){
-            res.json()
-            .then(user=>{
-              setUser(user)
-          navigate('/home')
-            })
-          } else {
-            res.json()
-            console.log("shoot")
-            .then(json => setError(json.error))
-          }
-        })
-    }
-
+function onSubmit(e) {
+  e.preventDefault();
+  const user  = {
+    username: username,
+    password
+  }
+  console.log(user)
+  fetch('/login', {
+        method:'POST',
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify(user)
+      })
+      .then(res => {
+        if(res.ok){
+          res.json()
+          .then(user=>{
+            setUser(user)
+            navigate('/home')
+          })
+        } else {
+          res.json()
+          console.log("shoot")
+          .then(json => setError(json.error))
+        }
+      })
+  }
 return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={3}>
@@ -67,7 +65,7 @@ return (
              </form>
              {error?<div>{error}</div>:null}
              <div className="no_account">
-                 <div>Don't have an account? <span style={{"fontWeight":"bold", "color":"#0395F6"}}>Sign Up</span></div>
+                 <div>Don't have an account? <nav> <a href="/signup" style={{"fontWeight":"bold", "color":"#0395F6"}}>Sign Up</a></nav></div>
              </div>
               </div>
               </div>

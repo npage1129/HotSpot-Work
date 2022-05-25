@@ -2,21 +2,12 @@ import React, {useState, useEffect} from 'react'
 import Post from './Post'
 import './MainContent.css'
 
-const MainContent = ({posts, user}) => {
-  const [avatar, setAvatar] = useState([])
-
-    useEffect(()=> {
-        fetch('/users', {
-        
-    })
-        .then((resp) => resp.json())
-        .then((data) => setAvatar(data))
-    },[])
-
+const MainContent = ({posts, setUser}) => {
+  
   return (
     <div>
         <div className="Nav">
-          <Post posts={posts} user={user} avatar={avatar}/>
+          <Post posts={posts} setUser ={setUser}/>
         </div>
     </div>
   )

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Avatar from '@mui/material/Avatar';
 import "./Post.css"
 
-function Post({posts, user}){
+function Post({posts}){
   const [show, setShow]= useState('false')
   function showButton(){
     setShow(!show)
@@ -17,12 +16,12 @@ function Post({posts, user}){
               </div>
                 
                   <div>
-                    <img className = "post_image" src ={post.img} key = {post.id}  /> 
+                    <img className = "post_image" src ={post.img} key = {post.id}/> 
                     <div className = "captions">
                     {post.caption} 
                   
                     </div>
-         
+
                     {show? (post.comments.map((comment)=>
                     <div className="comments">
         
@@ -34,7 +33,7 @@ function Post({posts, user}){
                           <button className="comments_section" onClick={showButton}>{show?"Hide Comments":"Show Comments"}</button>
                     </div>
                 </div> 
-    ))}
+))}
     </div>
   );
 }

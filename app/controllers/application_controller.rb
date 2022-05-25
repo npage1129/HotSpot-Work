@@ -4,14 +4,12 @@ class ApplicationController < ActionController::API
 
   include ActionController::Cookies
 
-
-
-  def current_user
-    User.find_by(id: session[:current_user])
+  def user_id
+    User.find_by(id: session[:user_id])
 end
 
 def authorize_user
-  return render json: { error: "Not Authorized" }, status: :unauthorized unless current_user
+  return render json: { error: "Not Authorized" }, status: :unauthorized unless user_id
 end
 
   private
