@@ -1,12 +1,11 @@
 
+
 .post_image{
     height: 400px;
     width: 450px;
     padding: 6px;
     background-color: #0d01013f;
     border: 2px solid #6a67671c;
-    display: block;
-    margin: 0 auto;
 
 }
 .middle{
@@ -33,14 +32,16 @@
     border: 2px solid #8f8d8ddb;
     background-color: #bdb8b837;
     font-size: 18px;
-    margin-top: 30px;
 }
 .comments_section{
     width: 125px;
     border: 2px solid #000000db;
     background-color: #c50505;
-
+    margin-bottom: 50px
 }
-button{
-    margin-top:0px;
-}
+.home{
+    margin-left: 0px;
+         margin-right: 0px;
+         float: right;
+         margin-top: 25px;
+      }

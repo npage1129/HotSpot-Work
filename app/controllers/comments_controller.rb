@@ -24,10 +24,10 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.permit(:comment)
+        params.permit(:comment, :user_id, :post_id, :username)
     end
     def comment_update_params
-        params.permit(:comment)
+        params.permit(:comment, :user_id, :post_id, :username)
     end
 end
 

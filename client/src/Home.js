@@ -4,23 +4,14 @@ import MainContent from './MainContent';
 
 
 
-const Home = ({user, setUser, setIsAuthenticated, isAuthenticated}) => {
-    const [posts, setPosts] = useState([])
- 
+const Home = ({user, setUser, setIsAuthenticated, isAuthenticated, posts, setPosts}) => {
 
-    useEffect(()=> {
-        fetch('/posts', {
-    })
-        .then((resp) => resp.json())
-        .then((data) => setPosts(data));
-    }, []);
-    console.log(posts)
 
 return (
     
     <div>
-    <Header posts={posts} user={user} setUser={setUser} setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated}  />
-    <MainContent posts={posts} />
+    <Header posts={posts} setPosts={setPosts} user={user} setUser={setUser} setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated}  />
+    <MainContent posts={posts} setPosts={setPosts} user={user} setUser={setUser} setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} />
     </div>
 )
 }

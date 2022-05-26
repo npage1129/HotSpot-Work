@@ -2,12 +2,12 @@ import React, {useState, useEffect} from 'react'
 import Post from './Post'
 import './MainContent.css'
 
-const MainContent = ({posts, setUser}) => {
+const MainContent = ({user, setUser, posts, setIsAuthenticated}) => {
   
   return (
     <div>
         <div className="Nav">
-          <Post posts={posts} setUser ={setUser}/>
+          <Post posts={posts} user={user} setUser ={setUser}/>
         </div>
     </div>
   )

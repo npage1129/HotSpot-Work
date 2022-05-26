@@ -9,7 +9,7 @@ import {useNavigate} from 'react-router'
 
 
 
-function Header({user, setUser, handleLogout, setIsAuthenticated, isAuthenticated}){
+function Header({user, setUser, handleLogout, setIsAuthenticated}){
 const [avatar, setAvatar] = useState([])
 const [show, setShow] = useState([{}])
 const [update, setUpdate] = useState([])
@@ -19,7 +19,7 @@ const navigate = useNavigate();
 
 function handleLogout() {
     fetch("/logout", {
-      method: "DELETE",
+    method: "DELETE",
     }).then(()=>{
         setIsAuthenticated(false)
         setUser(null)
@@ -51,8 +51,6 @@ return (
     <Grid item xs={0}></Grid>
     <img className="logoNav" src={'https://lh3.googleusercontent.com/sRrBGmDHDnR28LqMo7iDdUSxG-uXoFS7lyf0FwIAHV_8iR05kBvhE-JFoM5hlwLqtC2Z9TNrN3KLpIM3zykwKld69d-tR0EqiyEoAPY_XLlR6T7cHzd65YOgDGmfdIA5oqW5Bmc2w2s=w2400'} alt={'hello'}/>
     <Grid item xs={4}>
-    <input className= "searchBar" text="text" placeholder="Search" />
-    <button>Submit</button>
     </Grid>
     <Grid item xs={2}></Grid>
     
@@ -65,7 +63,7 @@ return (
         <div className = "avatar">  
         
         {user?  
-     (<Avatar src={user.image}/>):(<Avatar/>)
+     (<Avatar onClick={()=>{navigate('/profile')}} src={user.image}/>):(<Avatar/>)
     
     
      } 

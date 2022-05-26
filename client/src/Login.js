@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router'
 
 
 
-function Login({setUser})  {
+function Login({setUser, setIsAuthenticated})  {
 const navigate = useNavigate();
 const [username, setUsername] = useState("");
 const [password, setPassword] = useState("");
@@ -29,6 +29,7 @@ function onSubmit(e) {
           res.json()
           .then(user=>{
             setUser(user)
+            setIsAuthenticated(true)
             navigate('/home')
           })
         } else {

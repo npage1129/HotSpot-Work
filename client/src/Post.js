@@ -1,12 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import "./Post.css"
 
-function Post({posts}){
+function Post({posts, user}){
   const [show, setShow]= useState('false')
+  const [comment, setComment] = useState('')
+  
+  
+  function addComment(){
+
+
+  }
+  
   function showButton(){
     setShow(!show)
   }
-  
+  console.log(comment)
   return (
     <div className="middle">
     {posts.map((post)=>(
@@ -32,6 +40,23 @@ function Post({posts}){
                   )) : null}
                           <button className="comments_section" onClick={showButton}>{show?"Hide Comments":"Show Comments"}</button>
                     </div>
+                    <input type="text" placeholder="comment" onChange={(event) => setComment(event.target.value)}></input>
+                    <button onClick={(e)=>{
+                          const newObj =  {
+                            user_id: user.id,
+                            post_id: post.id,
+                            comment,
+                            username: user.username,
+                          }
+                          const postSet = {
+                            method:'POST',
+                            headers: {'Content-Type':'application/json'},
+                            body: JSON.stringify(newObj)}
+                            fetch('/comments', postSet)
+                            .then(response => response.json())
+                            .then((data)=> setComment([...comment, data]))
+                          }}
+                          >Add Comment</button>
                 </div> 
 ))}
     </div>

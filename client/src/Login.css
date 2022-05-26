@@ -1,3 +1,4 @@
+
 .party{
     display: flex;
     margin-top: 100px;
@@ -66,4 +67,18 @@
         margin-top: 250px;
         padding: 3px;
         background-color: white;
+    }
+
+    @media only screen and (max-width: 1580px) {
+    .party{
+        display: flex;
+        margin-top: 100px;
+        width: 300px;
+        height: 500px;
+        border: 2px  solid #c0b4b4db;
+        padding: 2px;
+        background-color: rgb(222, 218, 218);
+        height: 550px;
+    }
+
     }
