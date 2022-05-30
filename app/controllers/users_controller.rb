@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
+    skip_before_action :authorize_user, :only => [:new,:index, :show, :create, :update, :destroy]
 
-    # before_action :authorize_user, except: [:new, :create]
 
     
     def index
@@ -43,4 +43,6 @@ class UsersController < ApplicationController
     def  user_create
         params.permit(:username, :password, :image, :email)
     end
+
+    
 end

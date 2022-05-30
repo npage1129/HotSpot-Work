@@ -35,6 +35,7 @@ function Profile({posts,user,}) {
                     <img className = "post_image" src ={posts.img} key = {posts.id}/> 
                     <div className = "captions">
                     {posts.caption} 
+              
                     </div>
                     {show? (posts.comments.map((comment)=>
                     <div className="comments">

@@ -1,38 +1,19 @@
 import React, {useState} from 'react';
 import "./Post.css"
 
-function Post({posts, user, handleAddPost}){
+function Post({posts, user, handleAddPost, isAuthenticated}){
   const [show, setShow]= useState('false')
   const [comment, setComment] = useState('')
-  const [image, setImage] = useState('')
-  const  [caption, setCaption] =useState('')
+
   
   function showButton(){
     setShow(!show)
   }
 
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    fetch("/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: user.username,
-        image: image,
-        caption: caption,
-      }),
-    })
-      .then((r) => r.json())
-      .then((newPost) => handleAddPost(newPost));
-  }
-
-
   return (
     <div className="middle">
-    {posts.map((post)=>(
+  {posts.map((post)=>(
             <div className="container">
               <div className="header" >
               {post.user.username}
