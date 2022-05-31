@@ -34,7 +34,6 @@ function onSubmit(e) {
           })
         } else {
           res.json()
-          console.log("shoot")
           .then(json => setError(json.error))
         }
       })
