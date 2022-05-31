@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     def update
         post = Post.find(params[:id])
         post.update(post_update_params)
-        render json: post_update_params
+        render json: post, status: :ok
     end 
 
     def destroy
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
         params.permit(:img, :caption)
     end
     def post_update_params
-        params.permit(:img, :caption)
+        params.permit(:caption)
     end
 end
 

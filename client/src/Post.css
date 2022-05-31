@@ -44,3 +44,8 @@
 button{
     margin-top:0px;
 }
+.Add{
+    width: 125px;
+    border: 2px solid #000000db;
+    background-color: #282727;  
+}
