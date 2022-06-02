@@ -1,0 +1,12 @@
+.Add_Post{
+    color: rgb(235, 235, 235);
+    background-color: rgba(0, 0, 0, 0.861);
+    padding: 0.5em 0.5em 0.5em;
+    border-radius: 0.5em;
+    border-color: white;
+    text-align: center;
+}
+button{
+    border-color: black;
+    background-color:red
+}

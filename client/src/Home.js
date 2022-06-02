@@ -11,7 +11,7 @@ return (
     
     <div>
     <Header posts={posts} setPosts={setPosts} user={user} setUser={setUser} setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated}  />
-    <MainContent isAuthenticated={isAuthenticated} posts={posts} setPosts={setPosts} user={user} setUser={setUser} setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} handleAddPost={handleAddPost}/>
+    <MainContent isAuthenticated={isAuthenticated} posts={posts} setPosts={setPosts} user={user} setUser={setUser} setIsAuthenticated={setIsAuthenticated}  handleAddPost={handleAddPost}/>
     </div>
 )
 }

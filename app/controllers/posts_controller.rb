@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
     skip_before_action :authorize_user, :only => [:index, :create, :update, :destroy]
+
     def index
         render json: Post.all
     end
@@ -23,7 +24,7 @@ class PostsController < ApplicationController
 
     private
     def post_params
-        params.permit(:img, :caption)
+        params.permit(:img, :caption, :user_id, :event_id)
     end
     def post_update_params
         params.permit(:caption)

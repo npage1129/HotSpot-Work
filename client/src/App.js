@@ -11,7 +11,9 @@ function App() {
 const [user, setUser]= useState(null)
 const [isAuthenticated, setIsAuthenticated] = useState(false);
 const [posts, setPosts] = useState([])
-const[newPost, setNewPost] = useState([]);
+
+
+
 
 useEffect(() => {
   fetch('/me')
@@ -39,9 +41,10 @@ console.log(posts)
 console.log(user)
 
 function handleAddPost(newPosts) {
-  const updatedPostsArray = [...newPost, newPosts];
-  setNewPost(updatedPostsArray);
+  const updatedPostsArray = [...posts, newPosts];
+  setPosts(updatedPostsArray);
 }
+
 
   
   return (
@@ -55,7 +58,7 @@ function handleAddPost(newPosts) {
       setUser={setUser} isAuthenticated={isAuthenticated}/>} />
       <Route path = "/profile" element={<Profile user={user} setUser={setUser} posts={posts} setPosts={setPosts}/>}/>
       <Route path= "/add" element={<Add setIsAuthenticated={setIsAuthenticated}
-      isAuthenticated={isAuthenticated} user={user} setUser={setUser} posts={posts} setPosts={setPosts}/>}/>
+      isAuthenticated={isAuthenticated} user={user} setUser={setUser} posts={posts} setPosts={setPosts} handleAddPost={handleAddPost}/>}/>
       </Routes>
       </Router>
     

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Add from './Add';
 import "./Post.css"
 
 
@@ -7,8 +8,6 @@ function Post({posts, user, handleAddPost, isAuthenticated}){
   const [comment, setComment] = useState('')
   const [liked, setLiked] = useState('false');
   
- 
-  
   function showButton(){
     setShow(!show)
   }
@@ -16,6 +15,7 @@ function Post({posts, user, handleAddPost, isAuthenticated}){
 
   return (
     <div className="middle">
+      <Add user={user}/>
   {posts.map((post)=>(
             <div className="container">
               <div className="header" >
@@ -26,7 +26,7 @@ function Post({posts, user, handleAddPost, isAuthenticated}){
                     <img className = "post_image" src ={post.img} key = {post.id}/> 
                     <div className = "captions">
                     {post.caption} 
-                   
+              
                     </div>
 
                     {show? (post.comments.map((comment)=>
